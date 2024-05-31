@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: LGPL-2.1
  */
 
-/ {
+ / {
 
     power_shield: power-shield{
 
@@ -15,8 +15,8 @@
         leg1: leg1{
             leg-name = "LEG1";
             pwm-pin-num = <12 14>;
-            capa-pin-num = <7>;
             driver-pin-num = <19>;
+            capa-pin-num = <0>;
             current-pin-num = <30>;
             adc-trigger = "ADCTRIG_1";
             default-adc-decim = <1>;
@@ -29,9 +29,23 @@
         leg2: leg2{
             leg-name = "LEG2";
             pwm-pin-num = <2 4>;
-            capa-pin-num = <56>;
             driver-pin-num = <22>;
+            capa-pin-num = <0>;
             current-pin-num = <25>;
+            adc-trigger = "ADCTRIG_3";
+            default-adc-decim = <1>;
+            edge-trigger = "EdgeTrigger_up";
+            default-dead-time = <100 100>;
+            modulation = "UpDwn";
+            default-phase-shift = <0>;
+        };
+
+        leg3: leg3{
+            leg-name = "LEG3";
+            pwm-pin-num = <10 11>;
+            driver-pin-num = <56>;
+            capa-pin-num = <0>;
+            current-pin-num = <1>;
             adc-trigger = "ADCTRIG_3";
             default-adc-decim = <1>;
             edge-trigger = "EdgeTrigger_up";
