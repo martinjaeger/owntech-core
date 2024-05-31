@@ -6,16 +6,22 @@
 
 / {
 	chosen {
-		thingset,can = &fdcan2;
+		thingset,can = &fdcan1;
 	};
 };
 
-&fdcan2 {
-	pinctrl-0 = <&fdcan2_rx_pb5 &fdcan2_tx_pb6>;
+&fdcan1 {
+	pinctrl-0 = <&fdcan1_rx_pb8 &fdcan1_tx_pb9>;
 	pinctrl-names = "default";
 	bus-speed = <500000>;
 	sample-point = <875>;
 	bus-speed-data = <2000000>;
 	sample-point-data = <875>;
 	status = "okay";
+	transceiver0: can-phy0 {
+		compatible = "ti,tcan334", "can-transceiver-gpio";
+		max-bitrate = <1000000>;
+		standby-gpios = <&gpiob 4 GPIO_ACTIVE_LOW>;
+		#phy-cells=<0>;
+	};
 };
