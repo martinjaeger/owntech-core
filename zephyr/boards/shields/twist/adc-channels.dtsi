@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: LGPL-2.1
  */
 
-/ {
+ / {
 	twist-channels {
 
 		/* Voltage channels */
@@ -42,41 +42,41 @@
 			channel-name = "V_HIGH";
 			default-gain = <0x3cf57710>;
 			default-offset = <0x00000000>;
-			spin-pin = <27>;
+			spin-pin = <26>;
 			v-high-adc1 {
-				io-channels = <&adc1 9>;
+				io-channels = <&adc1 8>;
 			};
 			v-high-adc2 {
-				io-channels = <&adc2 9>;
+				io-channels = <&adc2 8>;
 			};
 		};
 
 		/* Current channels */
-
-		i1low: i1-low {
-			compatible = "adc-channels";
-			channel-name = "I1_LOW";
-			default-gain = <0x3ba3d70a>;
-			default-offset = <0xc1200000>;
-			spin-pin = <30>;
-			i1-low-adc1 {
-				io-channels = <&adc1 2>;
-			};
-			i1-low-adc2 {
-				io-channels = <&adc2 2>;
-			};
-		};
 
 		i2low: i2-low {
 			compatible = "adc-channels";
 			channel-name = "I2_LOW";
 			default-gain = <0x3ba3d70a>;
 			default-offset = <0xc1200000>;
-			spin-pin = <25>;
+			spin-pin = <30>;
 			i2-low-adc1 {
-				io-channels = <&adc1 7>;
+				io-channels = <&adc1 2>;
 			};
 			i2-low-adc2 {
+				io-channels = <&adc2 2>;
+			};
+		};
+
+		i1low: i1-low {
+			compatible = "adc-channels";
+			channel-name = "I1_LOW";
+			default-gain = <0x3ba3d70a>;
+			default-offset = <0xc1200000>;
+			spin-pin = <25>;
+			i1-low-adc1 {
+				io-channels = <&adc1 7>;
+			};
+			i1-low-adc2 {
 				io-channels = <&adc2 7>;
 			};
 		};
@@ -86,12 +86,12 @@
 			channel-name = "I_HIGH";
 			default-gain = <0x3ba3d70a>;
 			default-offset = <0xc1200000>;
-			spin-pin = <26>;
+			spin-pin = <27>;
 			i-high-adc1 {
-				io-channels = <&adc1 8>;
+				io-channels = <&adc1 9>;
 			};
 			i-high-adc2 {
-				io-channels = <&adc2 8>;
+				io-channels = <&adc2 9>;
 			};
 		};
 
@@ -129,5 +129,29 @@
 				io-channels = <&adc2 5>;
 			};
 		};
+
+
+		sin: analog-sin {
+			compatible = "adc-channels";
+			channel-name = "ANALOG_SIN";
+			default-gain = <0x3f800000>;
+			default-offset = <0x00000000>;
+			spin-pin = <43>;
+			analog-sin-adc2 {
+				io-channels = <&adc2 11>;
+			};
+		};
+		cos: analog-cos {
+			compatible = "adc-channels";
+			channel-name = "ANALOG_COS";
+			default-gain = <0x3f800000>;
+			default-offset = <0x00000000>;
+			spin-pin = <45>;
+			analog-cos-adc2 {
+				io-channels = <&adc2 17>;
+			};
+		};
+
+
 	};
 };
