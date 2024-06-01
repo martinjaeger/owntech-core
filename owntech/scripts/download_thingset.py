@@ -10,7 +10,7 @@ Import("env")
 
 # Specify fixed commits for ThingSet libraries to make builds reproducible
 thingset_node_rev = "0c71987b6664fc50a20457918bb4039340c74375"
-thingset_sdk_rev = "6e4c2eaf1262c19dca9bd73907b05a4de00f773b"
+thingset_sdk_rev = "46e598cc6dfb2b838377fcd95a2fa38e0ac38f8c"
 
 ####
 # Determine if thingset must be downloaded
